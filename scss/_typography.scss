@@ -1,68 +1,21 @@
-@use 'sass:map';
-@import url('https://fonts.googleapis.com/css2?family=Cantata+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 // Typography Styles
-// Font Info Map - Contains all font properties
-$fontInfo: (
-  family: ('Akzidenz-Grotesk', sans-serif),
-  weights: (
-    light: 300,
-    regular: 400,
-    medium: 500,
-    bold: 700,
-    black: 900
-  ),
-  cases: (
-    normal: normal,
-    upper: uppercase,
-    lower: lowercase,
-    capitalize: capitalize
-  ),
-  sizes: (
-    small: 0.875rem,    // 14px
-    medium: 1rem,       // 16px
-    large: 1.25rem,     // 20px
-    xlarge: 1.5rem,     // 24px
-    xxlarge: 2rem       // 32px
-  )
-);
-// Font Voice Map - For secondary font
-$fontVoice: (
-  family: ('Georgia Regular', serif),
-  weights: (
-    regular: 400,
-    bold: 700
-  ),
-  cases: (
-    normal: normal,
-    upper: uppercase,
-    capitalize: capitalize
-  )
-);
-/* Usage Examples:
-  
-  // Basic usage with functions
-  .title {
-    font-family: font-family($fontInfo);
-    font-weight: font-weight($fontInfo, bold);
-    text-transform: text-case($fontInfo, upper);
-  }
-  
-  // Using mixins (recommended)
-  .main-heading {
-    @include heading-font(black, xxlarge, upper);
-  }
-  
-  .body-text {
-    @include body-font(regular, medium);
-  }
-  
-  .accent-text {
-    @include accent-font(bold, large, capitalize);
-  }
-  
-  // Custom combination
-  .custom-text {
-    @include apply-font($fontInfo, medium, small, lower);
-  }
-*/
+// Font Faces Import
+// #region font Akizidenz Grotesk Black
+@font-face {
+    font-family: 'Akzidenz Grotesk Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Akzidenz Grotesk Black'), url('assets/fonts/Akzidenz-grotesk-black.woff') format('woff');
+}
+
+
+// #endregion
+
+// #region georgia regular
+@font-face {
+    font-family: 'Georgia Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Georgia Regular'), url('assets/fonts/georgia.woff') format('woff');
+}
+// #endregion
