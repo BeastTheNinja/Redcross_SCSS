@@ -1,3 +1,127 @@
 @use 'typography' as *;
 @use 'colorpalette' as *;
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:string';
+
 // Logo Size Styles
+// Base logo specifications
+$logo-base-size: 26px;                    // Normal logo without text
+$logo-text-spacing: 6px;                  // Space between logo and text
+$logo-with-text-scale: 1.15;              // Scale factor for logo when with text (~30px)
+// Logo size configurations
+$logo-sizes: (
+  // Logo only (without text)
+  logo-only: (
+    size: $logo-base-size,
+    clear-space: $logo-base-size * 0.5,    // 13px clear space around logo
+    min-size: $logo-base-size * 0.75       // 19.5px minimum size
+  ),
+  // Logo with text
+  logo-with-text: (
+    logo-size: $logo-base-size * $logo-with-text-scale,  // ~30px
+    text-spacing: $logo-text-spacing,                     // 6px gap
+    clear-space: ($logo-base-size * $logo-with-text-scale) * 0.5,  // 15px clear space
+    min-size: ($logo-base-size * $logo-with-text-scale) * 0.75     // 22.5px minimum
+  ),
+  // Responsive breakpoints
+  small: (
+    logo-only: $logo-base-size * 0.75,         // 19.5px
+    logo-with-text: $logo-base-size * 0.9,     // 23.4px
+    text-spacing: $logo-text-spacing * 0.75,   // 4.5px
+    clear-space: $logo-base-size * 0.375       // 9.75px
+  ),
+  medium: (
+    logo-only: $logo-base-size,                // 26px
+    logo-with-text: $logo-base-size * $logo-with-text-scale,  // 30px
+    text-spacing: $logo-text-spacing,          // 6px
+    clear-space: $logo-base-size * 0.5         // 13px
+  ),
+  
+  large: (
+    logo-only: $logo-base-size * 1.25,         // 32.5px
+    logo-with-text: $logo-base-size * 1.5,     // 39px
+    text-spacing: $logo-text-spacing * 1.25,   // 7.5px
+    clear-space: $logo-base-size * 0.625       // 16.25px
+  ),
+  
+  xlarge: (
+    logo-only: $logo-base-size * 1.5,          // 39px
+    logo-with-text: $logo-base-size * 1.75,    // 45.5px
+    text-spacing: $logo-text-spacing * 1.5,    // 9px
+    clear-space: $logo-base-size * 0.75        // 19.5px
+  )
+);
+
+// Clear space specifications for different contexts
+$clear-space-contexts: (
+  minimum: $logo-base-size * 0.25,           // 6.5px - absolute minimum
+  standard: $logo-base-size * 0.5,           // 13px - standard clear space
+  comfortable: $logo-base-size * 0.75,       // 19.5px - comfortable spacing
+  generous: $logo-base-size                  // 26px - generous spacing
+);
+
+// Button and graphic separation specifications  
+$logo-separation: (
+  // Distance from buttons
+  button-spacing: (
+    tight: 12px,
+    normal: 16px,
+    loose: 24px
+  ),
+  
+  // Distance from other graphics/elements
+  graphic-spacing: (
+    tight: 8px,
+    normal: 12px,
+    loose: 20px
+  ),
+  
+  // Wordmark separation (when logo and text are separate elements)
+  wordmark-spacing: (
+    horizontal: $logo-text-spacing,           // 6px - side by side
+    vertical: $logo-text-spacing * 0.75,     // 4.5px - stacked
+    inline: $logo-text-spacing * 0.5         // 3px - very close inline
+  )
+);
+
+// Usage guidelines (commented examples)
+/* 
+Logo Usage Guidelines:
+
+1. LOGO ONLY (26px base):
+   - Use for favicons, app icons, watermarks
+   - Minimum clear space: 13px on all sides
+   - Never scale below 19.5px
+
+2. LOGO WITH TEXT (30px logo + 6px spacing):
+   - Primary brand usage
+   - Logo is slightly larger to balance with text
+   - Minimum clear space: 15px on all sides
+   
+3. CLEAR SPACE RULES:
+   - Always maintain minimum clear space
+   - Use comfortable spacing for web headers
+   - Use generous spacing for print materials
+   
+4. SEPARATION RULES:
+   - Keep 16px from buttons (normal)
+   - Keep 12px from other graphics (normal)
+   - Wordmark spacing: 6px horizontal, 4.5px vertical
+
+Example Implementations:
+.logo-only {
+  width: map-get(map-get($logo-sizes, logo-only), size);
+  margin: map-get(map-get($logo-sizes, logo-only), clear-space);
+}
+
+.logo-with-text {
+  .logo {
+    width: map-get(map-get($logo-sizes, logo-with-text), logo-size);
+  }
+  
+  .text {
+    margin-left: map-get(map-get($logo-sizes, logo-with-text), text-spacing);
+  }
+}
+*/
