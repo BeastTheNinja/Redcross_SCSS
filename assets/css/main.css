@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Akzidenz Grotesk Light"), url("assets/fonts/Akzidenz-grotesk-light.woff") format("woff");
+}
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Akzidenz Grotesk Regular"), url("assets/fonts/Akzidenz-grotesk-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Akzidenz Grotesk Medium"), url("assets/fonts/Akzidenz-grotesk-medium.woff") format("woff");
+}
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Akzidenz Grotesk Bold"), url("assets/fonts/Akzidenz-grotesk-bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Akzidenz Grotesk Black"), url("assets/fonts/Akzidenz-grotesk-black.woff") format("woff");
+}
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Akzidenz Grotesk Italic"), url("assets/fonts/Akzidenz-grotesk-italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Akzidenz Grotesk";
+  font-style: italic;
+  font-weight: 700;
+  src: local("Akzidenz Grotesk Bold Italic"), url("assets/fonts/Akzidenz-grotesk-bold-italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Georgia Regular"), url("assets/fonts/georgia-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Georgia Bold"), url("assets/fonts/georgia-bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Georgia";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Georgia Italic"), url("assets/fonts/georgia-italic.woff") format("woff");
+}/*# sourceMappingURL=main.css.map */
