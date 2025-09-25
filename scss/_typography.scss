@@ -1,0 +1,66 @@
+@use 'sass:map';
+// Typography Styles
+// Font Info Map - Contains all font properties
+$fontInfo: (
+  family: ('Akzidenz-Grotesk', sans-serif),
+  weights: (
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    black: 900
+  ),
+  cases: (
+    normal: normal,
+    upper: uppercase,
+    lower: lowercase,
+    capitalize: capitalize
+  ),
+  sizes: (
+    small: 0.875rem,    // 14px
+    medium: 1rem,       // 16px
+    large: 1.25rem,     // 20px
+    xlarge: 1.5rem,     // 24px
+    xxlarge: 2rem       // 32px
+  )
+);
+// Font Voice Map - For secondary font
+$fontVoice: (
+  family: ('Georgia Regular', serif),
+  weights: (
+    regular: 400,
+    bold: 700
+  ),
+  cases: (
+    normal: normal,
+    upper: uppercase,
+    capitalize: capitalize
+  )
+);
+/* Usage Examples:
+  
+  // Basic usage with functions
+  .title {
+    font-family: font-family($fontInfo);
+    font-weight: font-weight($fontInfo, bold);
+    text-transform: text-case($fontInfo, upper);
+  }
+  
+  // Using mixins (recommended)
+  .main-heading {
+    @include heading-font(black, xxlarge, upper);
+  }
+  
+  .body-text {
+    @include body-font(regular, medium);
+  }
+  
+  .accent-text {
+    @include accent-font(bold, large, capitalize);
+  }
+  
+  // Custom combination
+  .custom-text {
+    @include apply-font($fontInfo, medium, small, lower);
+  }
+*/
