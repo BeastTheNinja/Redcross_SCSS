@@ -5,11 +5,12 @@
 @use 'sass:string';
 
 // Logo Size Styles
-// Base logo specifications
+// #region Base logo specifications
 $logo-base-size: 26px;                    // Normal logo without text
 $logo-text-spacing: 6px;                  // Space between logo and text
 $logo-with-text-scale: 1.15;              // Scale factor for logo when with text (~30px)
-// Logo size configurations
+// #endregion
+// #region Logo size configurations
 $logo-sizes: (
   // Logo only (without text)
   logo-only: (
@@ -52,6 +53,8 @@ $logo-sizes: (
     clear-space: $logo-base-size * 0.75        // 19.5px
   )
 );
+// #endregion
+// #region Clear space and separation guidelines
 
 // Clear space specifications for different contexts
 $clear-space-contexts: (
@@ -60,6 +63,7 @@ $clear-space-contexts: (
   comfortable: $logo-base-size * 0.75,       // 19.5px - comfortable spacing
   generous: $logo-base-size                  // 26px - generous spacing
 );
+
 
 // Button and graphic separation specifications  
 $logo-separation: (
@@ -84,44 +88,44 @@ $logo-separation: (
     inline: $logo-text-spacing * 0.5         // 3px - very close inline
   )
 );
-
+// #endregion
 // Usage guidelines (commented examples)
-/* 
-Logo Usage Guidelines:
 
-1. LOGO ONLY (26px base):
-   - Use for favicons, app icons, watermarks
-   - Minimum clear space: 13px on all sides
-   - Never scale below 19.5px
+// Logo Usage Guidelines:
 
-2. LOGO WITH TEXT (30px logo + 6px spacing):
-   - Primary brand usage
-   - Logo is slightly larger to balance with text
-   - Minimum clear space: 15px on all sides
+// 1. LOGO ONLY (26px base):
+//    - Use for favicons, app icons, watermarks
+//    - Minimum clear space: 13px on all sides
+//    - Never scale below 19.5px
+
+// 2. LOGO WITH TEXT (30px logo + 6px spacing):
+//    - Primary brand usage
+//    - Logo is slightly larger to balance with text
+//    - Minimum clear space: 15px on all sides
    
-3. CLEAR SPACE RULES:
-   - Always maintain minimum clear space
-   - Use comfortable spacing for web headers
-   - Use generous spacing for print materials
+// 3. CLEAR SPACE RULES:
+//    - Always maintain minimum clear space
+//    - Use comfortable spacing for web headers
+//    - Use generous spacing for print materials
    
-4. SEPARATION RULES:
-   - Keep 16px from buttons (normal)
-   - Keep 12px from other graphics (normal)
-   - Wordmark spacing: 6px horizontal, 4.5px vertical
+// 4. SEPARATION RULES:
+//    - Keep 16px from buttons (normal)
+//    - Keep 12px from other graphics (normal)
+//    - Wordmark spacing: 6px horizontal, 4.5px vertical
 
-Example Implementations:
-.logo-only {
-  width: map-get(map-get($logo-sizes, logo-only), size);
-  margin: map-get(map-get($logo-sizes, logo-only), clear-space);
-}
+// Example Implementations:
+// .logo-only {
+//   width: map-get(map-get($logo-sizes, logo-only), size);
+//   margin: map-get(map-get($logo-sizes, logo-only), clear-space);
+// }
 
-.logo-with-text {
-  .logo {
-    width: map-get(map-get($logo-sizes, logo-with-text), logo-size);
-  }
+// .logo-with-text {
+//   .logo {
+//     width: map-get(map-get($logo-sizes, logo-with-text), logo-size);
+//   }
   
-  .text {
-    margin-left: map-get(map-get($logo-sizes, logo-with-text), text-spacing);
-  }
-}
-*/
+//   .text {
+//     margin-left: map-get(map-get($logo-sizes, logo-with-text), text-spacing);
+//   }
+// }
+// 
